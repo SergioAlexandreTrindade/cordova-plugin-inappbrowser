@@ -1,13 +1,15 @@
 #!/usr/bin/env node
 
-var permissionsToRemove = [ "com.google.android.gms.permission.AD_ID"]; 
+var permissionsToRemove = ["com.google.android.gms.permission.AD_ID"]; 
 var fs = require('fs'); 
-var path = require('path'); 
-var rootdir = ""; 
-var manifestFile = path.join(rootdir, "platforms/android/app/src/main/AndroidManifest.xml"); 
+var path = require('path');
 
-fs.readFile( manifestFile, "utf8", function( err, data ) 
-{ 
+module.exports = function (context) {
+    var projectRoot = context.opts.cordova.project ? context.opts.cordova.project.root : context.opts.projectRoot;
+    var manifestPath = path.join(projectRoot, 'platforms/android/app/src/main/AndroidManifest.xml');
+    var manifestFile = fs.readFileSync(manifestPath).toString();
+    
+    fs.readFile( manifestFile, "utf8", function( err, data ){ 
     if (err) 
         return console.log( err ); 
 
@@ -20,4 +22,6 @@ fs.readFile( manifestFile, "utf8", function( err, data )
         if (err) 
             return console.log( err ); 
     } ); 
-} );
+    } );
+
+};
