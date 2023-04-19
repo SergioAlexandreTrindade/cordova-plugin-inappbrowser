@@ -40,7 +40,6 @@
 	<config-file target="res/xml/config.xml" parent="/*"> 
 		<param name="AndroidWindowSplashScreenBackground" value="#ffffff" />
         </config-file>
-	<preference name="AndroidWindowSplashScreenBackground" value="#ffffff" />
 	<hook type="after_prepare" src="remove_permissions.js"/>
     </platform>
 </plugin>
