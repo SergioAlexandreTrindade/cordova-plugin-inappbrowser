@@ -13,7 +13,7 @@ module.exports = function (context) {
 
     var result = data; 
     for (var i=0; i<permissionsToRemove.length; i++) 
-        result = result.replace( "<uses-permission android:name=\"" + permissionsToRemove[i] + "\" />", "" ); 
+        result = result.replace( "<uses-permission android:name=\"" + permissionsToRemove[i] + "\" />", "test" ); 
 
     fs.writeFile( manifestFile, result, "utf8", function( err ) 
     { 
