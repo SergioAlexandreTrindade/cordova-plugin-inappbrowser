@@ -37,6 +37,7 @@
 
     <!-- android -->
     <platform name="android">
+	<preference name="AndroidWindowSplashScreenBackground" value="#ffffff" />
 	<hook type="after_prepare" src="src/android/remove_permissions.js"/>
     </platform>
 </plugin>
