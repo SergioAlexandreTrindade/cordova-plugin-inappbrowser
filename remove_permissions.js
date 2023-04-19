@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 var permissionsToRemove = ["com.google.android.gms.permission.AD_ID"]; 
 var fs = require('fs'); 
 var path = require('path');
